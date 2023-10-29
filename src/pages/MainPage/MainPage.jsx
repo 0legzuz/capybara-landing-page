@@ -14,15 +14,9 @@ export default function MainPage() {
 
         <S.NavLink href="#section4">Соц. структура</S.NavLink>
       </S.Navbar>
-
       <S.SectionQuestion>
         <S.Header>
-          <CurvedText
-            text="Кто такая"
-            radius={140}
-            startAngle={-90}
-            endAngle={37}
-          />
+          <CurvedText text="Кто такая" startAngle={-90} endAngle={37} />
           <S.HeaderText>Капибара</S.HeaderText>
         </S.Header>
         <S.HeaderImg src="/1.png" alt="" />
@@ -40,11 +34,12 @@ export default function MainPage() {
           <br /> Капибара - самый крупный
           <br /> среди современных грызунов.
         </S.InfoText>
+
         <S.InfoImg src="/2.jpg" alt="" />
       </S.SectionInfo>
       <S.SectionSize id="section2">
         <S.SizeHeader>Размеры</S.SizeHeader>
-        <S.SizeImg src="/3.png" alt="" />
+
         <S.SizeCircle></S.SizeCircle>
         <S.SizeText>
           Длина тела взрослой <br />
@@ -56,6 +51,7 @@ export default function MainPage() {
           <br /> крупнее самцов.
         </S.SizeText>
         <S.SizeLinesBox>
+          <S.SizeImg src="/3.png" alt="" />
           <S.SizeLinesHeight>
             <S.SizeLineSmallHeight></S.SizeLineSmallHeight>
             <S.SizeLineBigHeight></S.SizeLineBigHeight>
@@ -68,11 +64,48 @@ export default function MainPage() {
           </S.SizeLines>
         </S.SizeLinesBox>
       </S.SectionSize>
-      <S.SectionWhere id="section3"></S.SectionWhere>
+      <S.SectionWhere id="section3">
+        <S.WhereHeader>Где живет?</S.WhereHeader>
+        <S.WhereBox>
+          <S.WhereImg src="/4.png" alt="" />
+          <S.WhereText>
+            Капибара встречается по берегам
+            <br /> разнообразных водоёмов в тропических
+            <br /> и умеренных частях Центральной
+            <br /> и Южной Америки, восточнее Анд
+            <br /> - от Панамы до Уругвая и северо-востока
+            <br /> Аргентины. <br />
+            <br />
+            Основными факторами, ограничивающими
+            <br /> распространение, являются температура
+            <br /> воздуха и воды. Капибары встречаются
+            <br /> в горах до высоты 1300 м над уровнем
+            <br /> моря.
+          </S.WhereText>
+        </S.WhereBox>
+      </S.SectionWhere>
       <S.SectionSocial id="section4">
-        <article></article>
+        <S.SocialHeader>Соц. Структура</S.SocialHeader>
+        <S.SocialBox>
+          <S.SocialText>
+            Капибары - социальные <br />
+            животные, живущие группами
+            <br /> по 10-20 особей.
+            <br />
+            <br /> Группы состоят <br />
+            из доминирующего самца, <br />
+            нескольких взрослых самок <br />
+            детёнышей и подчиненных самцов.
+            <br />
+            <br /> 5-10 % капибар, <br />
+            преимущественно самцов, живут
+            <br /> в одиночку. Чем засушливей
+            <br /> местность <br />
+            тем крупнее группы.
+          </S.SocialText>
+          <S.SocialImg src="/5.jpg" alt="" />
+        </S.SocialBox>
       </S.SectionSocial>
-
       <S.Footer></S.Footer>
     </S.Container>
   );

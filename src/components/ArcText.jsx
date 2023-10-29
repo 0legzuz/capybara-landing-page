@@ -2,37 +2,53 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
+function vwToPixels(vw) {
+  const pixels = Math.round(19.2 * vw);
+  return Math.min(pixels, 140);
+}
+const radius = 7.3;
+
 const LetterOnCurve = styled.div`
-  font-size: 120px;
+  font-size: 6.25vw;
   font-weight: 600;
-  margin-left:20px;
+  margin-left: 1.04vw;
   color: #313131;
   position: absolute;
   text-align: center;
   transform-origin: bottom center;
-  transform: ${({ angle, radius }) =>
-    `rotate(${angle}deg) translateY(-${radius}px)`};
+  transform: ${({ angle }) => `rotate(${angle}deg) translateY(-${radius}vw)`};
+
+  @media screen and (min-width: 1920px) {
+    font-size: ${vwToPixels(6.25)}px;
+    margin-left: ${vwToPixels(1.04)}px;
+    transform: ${({ angle }) =>
+      `rotate(${angle}deg) translateY(-${vwToPixels(radius)}px)`};
+  }
 `;
 
+const LettersBox = styled.div`
+  height: ${2 * radius}vw;
+  position: relative;
+  max-height: 280px;
+`;
 
-const CurvedText = ({ text, radius, startAngle, endAngle, spacing = 0 }) => {
+const CurvedText = ({ text, startAngle, endAngle, spacing = 0 }) => {
   const totalDegree = endAngle - startAngle;
-  const degree = totalDegree / ((text.length - 1) + (spacing * (text.length - 1)));
+  const degree = totalDegree / (text.length - 1 + spacing * (text.length - 1));
 
   return (
-    <div style={{ height: `${2 * radius}px`, position: 'relative' }}>
+    <LettersBox>
       {Array.from(text).map((char, i) => (
-        <LetterOnCurve key={i} angle={startAngle + i * (degree + spacing)} radius={radius}>
+        <LetterOnCurve key={i} angle={startAngle + i * (degree + spacing)}>
           {char}
         </LetterOnCurve>
       ))}
-    </div>
+    </LettersBox>
   );
 };
 
 CurvedText.propTypes = {
   text: PropTypes.string.isRequired,
-  radius: PropTypes.number.isRequired,
   startAngle: PropTypes.number.isRequired,
   endAngle: PropTypes.number.isRequired,
   spacing: PropTypes.number // new prop

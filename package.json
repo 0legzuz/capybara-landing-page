@@ -48,6 +48,7 @@
     "eslint": "^8.52.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-react": "^7.33.2",
+    "husky": "^8.0.3",
     "prettier": "3.0.3",
     "react-app-rewired": "^2.2.1",
     "styled-components": "^6.1.0"

@@ -9,16 +9,39 @@ const Colors = {
   darkBackground: '#1d1d1d',
   gray: '#313131',
   gold: '#ffb612',
-  lightGold: '#ffd46f',
+  lightGold: '#FFCE58',
   almostBlack: '#131313'
 };
 
 export const Container = styled.div`
-  background-color: ${Colors.lightBackground};
-  max-width: 1920px;
   width: 100%;
   margin: 0 auto;
   overflow: hidden;
+`;
+
+export const SectionBox = styled.div`
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+`;
+
+export const SectionQuestionBox = styled(SectionBox)`
+  background-color: ${Colors.lightBackground};
+`;
+export const SectionInfoBox = styled(SectionBox)`
+  background-color: ${Colors.darkBackground};
+`;
+
+export const SectionSizeBox = styled(SectionBox)`
+  background-color: ${Colors.darkBackground};
+`;
+
+export const SectionWhereBox = styled(SectionBox)`
+  background-color: ${Colors.lightBackground};
+`;
+
+export const SectionSocialBox = styled(SectionBox)`
+  background-color: ${Colors.lightGold};
 `;
 
 export const Navbar = styled.nav`
@@ -63,7 +86,8 @@ export const NavLinkBorder = styled(NavLink)`
 
 export const Section = styled.section`
   height: 62.5vw;
-
+  max-width: 1920px;
+  margin: 0 auto;
   @media screen and (min-width: 1920px) {
     height: ${vwToPixels(62.5)}px;
   }
@@ -71,7 +95,7 @@ export const Section = styled.section`
 
 export const SectionQuestion = styled(Section)`
   position: relative;
-  background-color: ${Colors.lightBackground};
+
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -121,7 +145,6 @@ export const HeaderImg = styled.img`
 `;
 
 export const SectionInfo = styled(Section)`
-  background-color: ${Colors.darkBackground};
   position: relative;
   display: flex;
   align-items: center;
@@ -174,8 +197,6 @@ export const InfoImg = styled.img`
 `;
 
 export const SectionSize = styled(Section)`
-  background-color: ${Colors.darkBackground};
-  overflow: hidden;
   position: relative;
 `;
 
@@ -325,8 +346,7 @@ export const SizeLineSmallHeight = styled.div`
 `;
 
 export const SectionWhere = styled(Section)`
-  background-color: ${Colors.lightBackground};
-  position: relative; // добавьте это
+  position: relative;
 `;
 
 export const WhereHeader = styled.div`
@@ -369,6 +389,7 @@ export const WhereText = styled.div`
     border-top: ${vwToPixels(0.26)}px solid ${Colors.gray};
     border-bottom: ${vwToPixels(0.26)}px solid ${Colors.gray};
     border-left: ${vwToPixels(0.26)}px solid ${Colors.gray};
+    border-right: ${vwToPixels(0.26)}px solid ${Colors.gray};
   }
 `;
 export const WhereImg = styled.img`
@@ -386,7 +407,6 @@ export const WhereImg = styled.img`
   }
 `;
 export const SectionSocial = styled(Section)`
-  background-color: #ffce58;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -420,12 +440,12 @@ export const SocialText = styled.div`
   font-weight: 400;
   color: ${Colors.gray};
   width: auto;
-  margin-left: 100px;
+  margin-left: 5.2vw;
   white-space: nowrap;
 
   @media screen and (min-width: 1920px) {
     font-size: ${vwToPixels(2.1)}px;
-    margin-left: ${vwToPixels(100 / 19.2)}px;
+    margin-left: ${vwToPixels(5.2)}px;
   }
 `;
 
@@ -444,9 +464,59 @@ export const SocialImg = styled.img`
 export const Footer = styled.footer`
   background-color: ${Colors.darkBackground};
   text-align: center;
-  height: 52.1vw;
+  height: 17vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
 
   @media screen and (min-width: 1920px) {
-    height: ${vwToPixels(52.1)}px;
+    height: ${vwToPixels(17)}px;
+  }
+`;
+
+export const NavigationLinks = styled.nav`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const Link = styled.a`
+  text-decoration: none;
+  font-size: 1.5vw;
+  font-weight: 200;
+  color: ${Colors.lightBackground};
+  padding-top: 1.5vw;
+  &:hover {
+    color: ${Colors.gold};
+    transition: color 0.3s ease;
+  }
+  @media screen and (min-width: 1920px) {
+    font-size: ${vwToPixels(1.5)}px;
+    padding-top: ${vwToPixels(1.5)}px;
+  }
+`;
+
+export const SvgBox = styled.p`
+  display: flex;
+  gap: 1vw;
+  &:hover {
+    color: ${Colors.lightGold};
+    transition: color 0.3s ease;
+  }
+`;
+
+export const LinkSvg = styled.svg`
+  width: 2.6vw;
+  height: 2.6vw;
+  fill: ${Colors.gold};
+`;
+
+export const CopyRightText = styled.p`
+  font-size: 1vw;
+  font-weight: 200;
+  color: ${Colors.lightBackground};
+  @media screen and (min-width: 1920px) {
+    font-size: ${vwToPixels(1)}px;
   }
 `;

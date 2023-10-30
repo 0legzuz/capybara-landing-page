@@ -383,25 +383,23 @@ export const WhereText = styled.div`
   @media screen and (min-width: 1920px) {
     font-size: ${vwToPixels(2.1)}px;
     padding: ${vwToPixels(5.2)}px ${vwToPixels(5.2)}px ${vwToPixels(5.2)}px
-      ${vwToPixels(10.4)}px;
+      ${vwToPixels(10)}px;
     width: ${vwToPixels(59.4)}px;
-    border-radius: ${vwToPixels(20.8)}px 0 0 ${vwToPixels(20.8)}px;
-    border-top: ${vwToPixels(0.26)}px solid ${Colors.gray};
-    border-bottom: ${vwToPixels(0.26)}px solid ${Colors.gray};
-    border-left: ${vwToPixels(0.26)}px solid ${Colors.gray};
-    border-right: ${vwToPixels(0.26)}px solid ${Colors.gray};
+    border-radius: ${vwToPixels(20.8)}px;
+    border: ${vwToPixels(0.26)}px solid ${Colors.gray};
   }
 `;
 export const WhereImg = styled.img`
   margin-right: 57vw;
-  width: 50vw;
+  height: 50vw;
   position: absolute;
   top: 11.5vw;
   left: -4.2vw;
 
   @media screen and (min-width: 1920px) {
     margin-right: ${vwToPixels(57)}px;
-    width: ${vwToPixels(50)}px;
+
+    height: ${vwToPixels(50)}px;
     top: ${vwToPixels(11.5)}px;
     left: ${vwToPixels(-4.2)}px;
   }
@@ -499,7 +497,8 @@ export const Link = styled.a`
 
 export const SvgBox = styled.p`
   display: flex;
-  gap: 1vw;
+  gap: 0.5vw;
+  cursor: pointer;
   &:hover {
     color: ${Colors.lightGold};
     transition: color 0.3s ease;
@@ -507,12 +506,18 @@ export const SvgBox = styled.p`
 `;
 
 export const LinkSvg = styled.svg`
-  width: 2.6vw;
-  height: 2.6vw;
   fill: ${Colors.gold};
+  width: 3.5vw;
+  @media screen and (min-width: 1920px) {
+    width: ${vwToPixels(3.5)}px;
+  }
 `;
 
-export const CopyRightText = styled.p`
+export const LinkSocial = styled.a`
+  display: inline-block;
+`;
+
+export const CopyRightText = styled.div`
   font-size: 1vw;
   font-weight: 200;
   color: ${Colors.lightBackground};

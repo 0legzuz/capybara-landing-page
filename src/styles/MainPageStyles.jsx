@@ -19,6 +19,22 @@ export const Container = styled.div`
   overflow: hidden;
 `;
 
+export const Button = styled.button`
+  position: fixed;
+  top: 20px;
+  right: 0px;
+  z-index: 7;
+  transition: transform 0.3s ease;
+  width: 5vw;
+  border-radius: 2.5vw;
+  background-color: transparent;
+  border-color: transparent;
+  fill: ${Colors.gold};
+  @media screen and (min-width: 1920px) {
+    width: ${vwToPixels(7)}px;
+  }
+`;
+
 export const SectionBox = styled.div`
   width: 100%;
   margin: 0 auto;

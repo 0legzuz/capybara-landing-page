@@ -167,7 +167,7 @@ export const InfoHeader = styled.div`
 export const InfoText = styled.div`
   padding-top: 5.21vw;
   font-size: 2.08vw;
-  font-weight: 200;
+  font-weight: 100;
   color: #fff;
   width: 40vw;
   margin-left: 5.21vw;
@@ -241,7 +241,7 @@ export const SizeCircle = styled.div`
 
 export const SizeText = styled.div`
   font-size: 2.6vw;
-  font-weight: 200;
+  font-weight: 100;
   color: ${Colors.lightGold};
   width: 40vw;
   margin-left: 5.2vw;
@@ -462,19 +462,17 @@ export const SocialImg = styled.img`
 export const Footer = styled.footer`
   background-color: ${Colors.darkBackground};
   text-align: center;
-  height: 11vw;
+  height: 14vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   color: white;
 
-
   @media screen and (min-width: 1920px) {
-    height: ${vwToPixels(11)}px;
+    height: ${vwToPixels(14)}px;
   }
 `;
-
 
 export const FooterBox = styled.p`
   cursor: pointer;
@@ -512,7 +510,7 @@ export const LinkSocial = styled.a`
 export const CopyRightText = styled.div`
   font-size: 1vw;
   padding-bottom: 0.5vw;
-  font-weight: 200;
+  font-weight: 100;
   color: ${Colors.lightBackground};
   @media screen and (min-width: 1920px) {
     font-size: ${vwToPixels(1)}px;

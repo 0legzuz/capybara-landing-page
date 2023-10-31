@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;600&display=swap');
+
   
   * {
     margin: 0;
@@ -24,6 +24,9 @@ a,
 
   }  
   
+::-webkit-scrollbar {
+  width: 0px;
+}
 
    
 `;

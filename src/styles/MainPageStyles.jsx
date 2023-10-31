@@ -95,7 +95,6 @@ export const Section = styled.section`
 
 export const SectionQuestion = styled(Section)`
   position: relative;
-
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -168,7 +167,7 @@ export const InfoHeader = styled.div`
 export const InfoText = styled.div`
   padding-top: 5.21vw;
   font-size: 2.08vw;
-  font-weight: 200;
+  font-weight: 100;
   color: #fff;
   width: 40vw;
   margin-left: 5.21vw;
@@ -242,7 +241,7 @@ export const SizeCircle = styled.div`
 
 export const SizeText = styled.div`
   font-size: 2.6vw;
-  font-weight: 200;
+  font-weight: 100;
   color: ${Colors.lightGold};
   width: 40vw;
   margin-left: 5.2vw;
@@ -392,13 +391,14 @@ export const WhereText = styled.div`
 export const WhereImg = styled.img`
   margin-right: 57vw;
   height: 50vw;
+  width: 50vw;
   position: absolute;
   top: 11.5vw;
   left: -4.2vw;
 
   @media screen and (min-width: 1920px) {
     margin-right: ${vwToPixels(57)}px;
-
+    width: ${vwToPixels(50)}px;
     height: ${vwToPixels(50)}px;
     top: ${vwToPixels(11.5)}px;
     left: ${vwToPixels(-4.2)}px;
@@ -462,7 +462,7 @@ export const SocialImg = styled.img`
 export const Footer = styled.footer`
   background-color: ${Colors.darkBackground};
   text-align: center;
-  height: 17vw;
+  height: 14vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -470,56 +470,47 @@ export const Footer = styled.footer`
   color: white;
 
   @media screen and (min-width: 1920px) {
-    height: ${vwToPixels(17)}px;
+    height: ${vwToPixels(14)}px;
   }
 `;
 
-export const NavigationLinks = styled.nav`
-  display: flex;
-  flex-direction: column;
-`;
-
-export const Link = styled.a`
-  text-decoration: none;
-  font-size: 1.5vw;
-  font-weight: 200;
-  color: ${Colors.lightBackground};
-  padding-top: 1.5vw;
-  &:hover {
-    color: ${Colors.gold};
-    transition: color 0.3s ease;
-  }
-  @media screen and (min-width: 1920px) {
-    font-size: ${vwToPixels(1.5)}px;
-    padding-top: ${vwToPixels(1.5)}px;
-  }
-`;
-
-export const SvgBox = styled.p`
-  display: flex;
-  gap: 0.5vw;
+export const FooterBox = styled.p`
   cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+
   &:hover {
     color: ${Colors.lightGold};
     transition: color 0.3s ease;
+  }
+
+  @media screen and (min-width: 1920px) {
+    margin-top: ${vwToPixels(1)}px;
+    margin-bottom: ${vwToPixels(1)}px;
   }
 `;
 
 export const LinkSvg = styled.svg`
   fill: ${Colors.gold};
-  width: 3.5vw;
+  width: 7vw;
   @media screen and (min-width: 1920px) {
-    width: ${vwToPixels(3.5)}px;
+    width: ${vwToPixels(7)}px;
   }
 `;
 
 export const LinkSocial = styled.a`
   display: inline-block;
+  margin-right: 0.25vw;
+  margin-left: 0.25vw;
 `;
 
 export const CopyRightText = styled.div`
   font-size: 1vw;
-  font-weight: 200;
+  padding-bottom: 0.5vw;
+  font-weight: 100;
   color: ${Colors.lightBackground};
   @media screen and (min-width: 1920px) {
     font-size: ${vwToPixels(1)}px;

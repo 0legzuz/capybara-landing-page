@@ -476,9 +476,9 @@ export const SocialImg = styled.img`
 `;
 
 export const Footer = styled.footer`
-  background-color: ${Colors.darkBackground};
+  background-color: ${Colors.gray};
   text-align: center;
-  height: 14vw;
+  height: 12vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

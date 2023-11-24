@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import * as S from '../../styles/MainPageStyles';
 import CurvedText from '../../components/ArcText';
+import Game from '../../components/GameSection';
 
 export default function MainPage() {
   const [buttonVisible, setButtonVisible] = useState(false);
@@ -160,6 +161,7 @@ export default function MainPage() {
           </S.SocialBox>
         </S.SectionSocial>
       </S.SectionSocialBox>
+      <Game></Game>
 
       <S.Footer>
         <S.FooterBox>

@@ -69,6 +69,9 @@ export const Navbar = styled.nav`
   @media screen and (min-width: 1920px) {
     padding-top: ${vwToPixels(1)}px;
   }
+  @media screen and (max-width: 425px) {
+    display: none;
+  }
 `;
 
 export const NavLink = styled.a`
@@ -141,6 +144,12 @@ export const HeaderText = styled.div`
   @media screen and (min-width: 1920px) {
     font-size: ${vwToPixels(13.54)}px;
   }
+  @media screen and (max-width: 425px) {
+    position: absolute;
+    font-size: 17vw;
+    padding-left: 7vw;
+    padding-top: 5vw;
+  }
 `;
 
 export const HeaderImg = styled.img`
@@ -157,6 +166,9 @@ export const HeaderImg = styled.img`
     padding-left: ${vwToPixels(10)}px;
     padding-top: ${vwToPixels(3.1)}px;
   }
+  @media screen and (max-width: 425px) {
+    margin-top: 15vw;
+  }
 `;
 
 export const SectionInfo = styled(Section)`
@@ -172,16 +184,21 @@ export const InfoHeader = styled.div`
   position: absolute;
   margin-left: 4.4vw;
   padding-bottom: 33.4vw;
+  z-index: 2;
 
   @media screen and (min-width: 1920px) {
     font-size: ${vwToPixels(13.5)}px;
     margin-left: ${vwToPixels(4.4)}px;
     padding-bottom: ${vwToPixels(33.4)}px;
   }
+  @media screen and (max-width: 425px) {
+    padding-bottom: 45vw;
+    font-size: 17vw;
+  }
 `;
 
 export const InfoText = styled.div`
-  padding-top: 5.21vw;
+  padding-top: 7vw;
   font-size: 2.08vw;
   font-weight: 100;
   color: #fff;
@@ -195,19 +212,42 @@ export const InfoText = styled.div`
     width: ${vwToPixels(40)}px;
     margin-left: ${vwToPixels(5.21)}px;
   }
+  @media screen and (max-width: 425px) {
+    font-size: 4vw;
+    padding-top: 15vw;
+  }
 `;
 
-export const InfoImg = styled.img`
-  border-radius: 26vw;
-  margin-right: 5.21vw;
+export const InfoImgBox = styled.div`
   width: 72vw;
   height: 38.5vw;
+  border-radius: 26vw;
+  margin-right: 5.21vw;
+  overflow: hidden;
 
   @media screen and (min-width: 1920px) {
     border-radius: ${vwToPixels(26)}px;
     margin-right: ${vwToPixels(5.21)}px;
     width: ${vwToPixels(72)}px;
     height: ${vwToPixels(38.5)}px;
+  }
+  @media screen and (max-width: 425px) {
+    position: absolute;
+    width: 108vw;
+    height: 52vw;
+    border-radius: 25vw;
+    margin-left: 58vw;
+  }
+`;
+
+export const InfoImg = styled.img`
+  height: 38.5vw;
+  @media screen and (min-width: 1920px) {
+    height: ${vwToPixels(38.5)}px;
+  }
+  @media screen and (max-width: 425px) {
+    height: 55vw;
+    transform: translateX(-15vw);
   }
 `;
 
@@ -224,6 +264,12 @@ export const SizeHeader = styled.div`
 
   @media screen and (min-width: 1920px) {
     font-size: ${vwToPixels(13.5)}px;
+  }
+  @media screen and (max-width: 425px) {
+    font-size: 17vw;
+    position: absolute;
+    z-index: 2;
+    margin-left: 4.4vw;
   }
 `;
 
@@ -253,6 +299,13 @@ export const SizeCircle = styled.div`
     border-radius: ${vwToPixels(36.4)}px;
     margin-left: ${vwToPixels(43)}px;
   }
+  @media screen and (max-width: 425px) {
+    width: 90vw;
+    height: 90vw;
+    border-radius: 45vw;
+    margin-top: 10vw;
+    margin-left: 35vw;
+  }
 `;
 
 export const SizeText = styled.div`
@@ -272,13 +325,19 @@ export const SizeText = styled.div`
     margin-left: ${vwToPixels(62.5)}px;
     margin-top: ${vwToPixels(15.6)}px;
   }
+  @media screen and (max-width: 425px) {
+    font-size: 4vw;
+    width: 50vw;
+    margin-top: 20vw;
+    margin-left: 55vw;
+  }
 `;
 
 export const SizeLinesBox = styled.div`
   display: flex;
   flex-direction: row;
   width: 62.5vw;
-  height: 32.5vw;
+
   transform: rotate(20deg);
   margin-left: 4.68vw;
   position: absolute;
@@ -289,6 +348,14 @@ export const SizeLinesBox = styled.div`
     width: ${vwToPixels(62.5)}px;
     height: ${vwToPixels(32.5)}px;
     margin-left: ${vwToPixels(4.68)}px;
+  }
+  @media screen and (max-width: 425px) {
+    margin-top: 10vw;
+    right: 60vw;
+    width: 70vw;
+    height: 40vw;
+    transform: rotate(20deg) scale(1.1);
+    flex-direction: row-reverse;
   }
 `;
 
@@ -301,6 +368,9 @@ export const SizeLines = styled.div`
   @media screen and (min-width: 1920px) {
     width: ${vwToPixels(51.25)}px;
     height: ${vwToPixels(1.56)}px;
+  }
+  @media screen and (max-width: 425px) {
+    margin-right: 5vw;
   }
 `;
 
@@ -337,6 +407,9 @@ export const SizeLinesHeight = styled.div`
     width: ${vwToPixels(1.56)}px;
     margin-left: ${vwToPixels(2.6)}px;
   }
+  @media screen and (max-width: 425px) {
+    margin-left: 0;
+  }
 `;
 
 export const SizeLineBigHeight = styled.div`
@@ -347,6 +420,9 @@ export const SizeLineBigHeight = styled.div`
   @media screen and (min-width: 1920px) {
     height: ${vwToPixels(27.1)}px;
     width: ${vwToPixels(0.26)}px;
+  }
+  @media screen and (max-width: 425px) {
+    height: 35vw;
   }
 `;
 
@@ -362,6 +438,9 @@ export const SizeLineSmallHeight = styled.div`
 
 export const SectionWhere = styled(Section)`
   position: relative;
+  @media screen and (max-width: 425px) {
+    height: 85vw;
+  }
 `;
 
 export const WhereHeader = styled.div`
@@ -374,6 +453,12 @@ export const WhereHeader = styled.div`
   @media screen and (min-width: 1920px) {
     font-size: ${vwToPixels(13.5)}px;
   }
+  @media screen and (max-width: 425px) {
+    font-size: 17vw;
+    position: absolute;
+    z-index: 1;
+    margin-left: 4.4vw;
+  }
 `;
 
 export const WhereBox = styled.div`
@@ -381,6 +466,10 @@ export const WhereBox = styled.div`
   flex-direction: row;
   justify-content: flex-end;
   overflow: visible;
+  @media screen and (max-width: 425px) {
+    position: absolute;
+    z-index: 0;
+  }
 `;
 export const WhereText = styled.div`
   font-size: 2.1vw;
@@ -403,6 +492,15 @@ export const WhereText = styled.div`
     border-radius: ${vwToPixels(20.8)}px;
     border: ${vwToPixels(0.26)}px solid ${Colors.gray};
   }
+  @media screen and (max-width: 425px) {
+    font-size: 4vw;
+    margin-left: 15vw;
+    margin-top: 18.3vw;
+    border-radius: 17vw 0 0 17vw;
+    padding: 4vw 4vw 4vw 8vw;
+    width: 100vw;
+    border-width: 0.6vw;
+  }
 `;
 export const WhereImg = styled.img`
   margin-right: 57vw;
@@ -419,11 +517,19 @@ export const WhereImg = styled.img`
     top: ${vwToPixels(11.5)}px;
     left: ${vwToPixels(-4.2)}px;
   }
+  @media screen and (max-width: 425px) {
+    font-size: 4vw;
+    z-index: -1;
+    transform: scale(2);
+  }
 `;
 export const SectionSocial = styled(Section)`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  @media screen and (max-width: 425px) {
+    height: 85vw;
+  }
 `;
 export const SocialHeader = styled.div`
   font-size: 10.4vw;
@@ -435,6 +541,10 @@ export const SocialHeader = styled.div`
   @media screen and (min-width: 1920px) {
     font-size: ${vwToPixels(10.4)}px;
   }
+  @media screen and (max-width: 425px) {
+    font-size: 13vw;
+    margin-left: 4.4vw;
+  }
 `;
 
 export const SocialBox = styled.div`
@@ -443,9 +553,14 @@ export const SocialBox = styled.div`
   justify-content: space-between;
   align-items: center;
   padding-top: 2.1vw;
+  padding-left: 5.2vw;
 
   @media screen and (min-width: 1920px) {
     padding-top: ${vwToPixels(2.1)}px;
+  }
+  @media screen and (max-width: 425px) {
+    padding-bottom: 3vw;
+    padding-left: 7vw;
   }
 `;
 
@@ -454,12 +569,15 @@ export const SocialText = styled.div`
   font-weight: 400;
   color: ${Colors.gray};
   width: auto;
-  margin-left: 5.2vw;
+
   white-space: nowrap;
 
   @media screen and (min-width: 1920px) {
     font-size: ${vwToPixels(2.1)}px;
     margin-left: ${vwToPixels(5.2)}px;
+  }
+  @media screen and (max-width: 425px) {
+    font-size: 4vw;
   }
 `;
 
@@ -467,11 +585,16 @@ export const SocialImg = styled.img`
   border-radius: 19.5vw;
   height: 39vw;
   margin-right: 5.2vw;
+  float: inline-end;
 
   @media screen and (min-width: 1920px) {
     border-radius: ${vwToPixels(19.5)}px;
     height: ${vwToPixels(39)}px;
     margin-right: ${vwToPixels(5.2)}px;
+  }
+  @media screen and (max-width: 425px) {
+    margin-bottom: 5vw;
+    transform: scaleX(-1) scale(1.4);
   }
 `;
 
@@ -487,6 +610,9 @@ export const Footer = styled.footer`
 
   @media screen and (min-width: 1920px) {
     height: ${vwToPixels(14)}px;
+  }
+  @media screen and (max-width: 425px) {
+    height: 17vw;
   }
 `;
 
@@ -511,9 +637,11 @@ export const FooterBox = styled.p`
 
 export const LinkSvg = styled.svg`
   fill: ${Colors.gold};
-  width: 7vw;
   @media screen and (min-width: 1920px) {
     width: ${vwToPixels(7)}px;
+  }
+  @media screen and (max-width: 425px) {
+    width: 10vw;
   }
 `;
 

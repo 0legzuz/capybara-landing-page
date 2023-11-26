@@ -71,7 +71,6 @@ export default function MainPage() {
       <S.SectionInfoBox>
         <S.SectionInfo id="section1">
           <S.InfoHeader>Капибара</S.InfoHeader>
-
           <S.InfoText>
             Полуводное травоядное
             <br /> млекопитающее
@@ -82,8 +81,9 @@ export default function MainPage() {
             <br /> Капибара - самый крупный
             <br /> среди современных грызунов.
           </S.InfoText>
-
-          <S.InfoImg src="/img/2.jpg" alt="Capybara in the pool" />
+          <S.InfoImgBox>
+            <S.InfoImg src="/img/2.jpg" alt="Capybara in the pool" />
+          </S.InfoImgBox>
         </S.SectionInfo>
       </S.SectionInfoBox>
       <S.SectionSizeBox>
@@ -149,13 +149,12 @@ export default function MainPage() {
               <br /> Группы состоят <br />
               из доминирующего самца, <br />
               нескольких взрослых самок <br />
-              детёнышей и подчиненных самцов.
+              детёнышей и подчиненных <br />
+              самцов.
               <br />
               <br /> 5-10 % капибар, <br />
-              преимущественно самцов, живут
-              <br /> в одиночку. Чем засушливей
-              <br /> местность <br />
-              тем крупнее группы.
+              преимущественно самцов, <br /> живут в одиночку. Чем засушливей
+              <br /> местность тем крупнее группы.
             </S.SocialText>
             <S.SocialImg src="/img/5.jpg" alt="Capybara Family" />
           </S.SocialBox>

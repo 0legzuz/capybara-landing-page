@@ -33,6 +33,9 @@ export const Button = styled.button`
   @media screen and (min-width: 1920px) {
     width: ${vwToPixels(7)}px;
   }
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const SectionBox = styled.div`
@@ -449,6 +452,7 @@ export const WhereHeader = styled.div`
   color: ${Colors.gray};
   display: flex;
   justify-content: center;
+  word-wrap:nowrap;
 
   @media screen and (min-width: 1920px) {
     font-size: ${vwToPixels(13.5)}px;
@@ -530,6 +534,7 @@ export const SectionSocial = styled(Section)`
   @media screen and (max-width: 425px) {
     height: 85vw;
   }
+  
 `;
 export const SocialHeader = styled.div`
   font-size: 10.4vw;
@@ -537,6 +542,7 @@ export const SocialHeader = styled.div`
   color: ${Colors.gray};
   display: flex;
   justify-content: center;
+  word-wrap: nowrap;
 
   @media screen and (min-width: 1920px) {
     font-size: ${vwToPixels(10.4)}px;

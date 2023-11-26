@@ -44,9 +44,11 @@ const GameHeader = styled.section`
   color: ${Colors.gold};
   display: flex;
   justify-content: center;
-
   @media screen and (min-width: 1920px) {
     font-size: ${vwToPixels(10.4)}px;
+  }
+  @media (max-width: 426px) {
+    font-size: 12vw;
   }
 `;
 
@@ -57,22 +59,18 @@ const CardBox = styled.section`
   grid-template-columns: repeat(auto-fill, minmax(220px, 10fr));
   justify-content: center;
   align-items: start;
-
   @media (min-width: 1440px) {
-    // Это допускает до 6 карточек в строку на экранах шире 1440px
     grid-template-columns: repeat(6, minmax(220px, 10fr));
   }
-
   @media (max-width: 1439px) and (min-width: 768px) {
-    // Это меняет макет до 3 карточек на строку когда ширина экрана от 769px до 1199px
     grid-template-columns: repeat(3, minmax(190px, 10fr));
   }
-
-  @media (max-width: 767px) {
-    // Это устанавливает макет до 2 карточек на строку, когда ширина экрана менее 768px
+  @media (max-width: 767px) and (min-width: 426px) {
     grid-template-columns: repeat(2, minmax(180px, 10fr));
+  }
+  @media (max-width: 426px) {
+    grid-template-columns: repeat(2, minmax(40vw, 10fr));
     gap: 3vw;
-    padding: 3vw;
   }
 `;
 
@@ -85,12 +83,15 @@ const Card = styled.div`
   background-size: cover;
   background-position: center;
   cursor: pointer;
-  @media (max-width: 1439px) and (min-width: 768px) {
+  @media (max-width: 1440px) and (min-width: 768px) {
     height: 300px;
   }
-
-  @media (max-width: 767px) {
+  @media (max-width: 768px) and (min-width: 425px) {
     height: 250px;
+  }
+  @media screen and (max-width: 425px) {
+    height: 60vw;
+    border-radius: 30px;
   }
 `;
 

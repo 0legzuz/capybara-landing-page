@@ -24,12 +24,19 @@ const LetterOnCurve = styled.div`
     transform: ${({ angle }) =>
       `rotate(${angle}deg) translateY(-${vwToPixels(radius)}px)`};
   }
+  @media screen and (max-width: 425px) {
+    font-size: 8vw;
+    font-weight: 400;
+  }
 `;
 
 const LettersBox = styled.div`
   height: ${2 * radius}vw;
   position: relative;
   max-height: 280px;
+  @media screen and (max-width: 425px) {
+    margin-right: 67vw;
+  }
 `;
 
 const CurvedText = ({ text, startAngle, endAngle, spacing = 0 }) => {

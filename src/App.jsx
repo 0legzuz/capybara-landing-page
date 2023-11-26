@@ -12,7 +12,7 @@ class App extends React.Component {
           <link
             rel="stylesheet"
             type="text/css"
-            href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;600&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap"
           />
         </Helmet>
         <MainPage />

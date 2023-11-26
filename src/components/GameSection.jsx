@@ -40,7 +40,7 @@ function vwToPixels(vw) {
 }
 const GameHeader = styled.section`
   font-size: 7vw;
-  font-weight: 600;
+  font-weight: 700;
   color: ${Colors.gold};
   display: flex;
   justify-content: center;

@@ -141,7 +141,7 @@ export const Header = styled.h1`
 
 export const HeaderText = styled.div`
   font-size: 13.54vw;
-  font-weight: 600;
+  font-weight: 700;
   color: ${Colors.gray};
 
   @media screen and (min-width: 1920px) {
@@ -182,7 +182,7 @@ export const SectionInfo = styled(Section)`
 
 export const InfoHeader = styled.div`
   font-size: 13.5vw;
-  font-weight: 600;
+  font-weight: 700;
   color: ${Colors.gold};
   position: absolute;
   margin-left: 4.4vw;
@@ -260,7 +260,7 @@ export const SectionSize = styled(Section)`
 
 export const SizeHeader = styled.div`
   font-size: 13.5vw;
-  font-weight: 600;
+  font-weight: 700;
   color: ${Colors.gold};
   display: flex;
   justify-content: center;
@@ -448,11 +448,11 @@ export const SectionWhere = styled(Section)`
 
 export const WhereHeader = styled.div`
   font-size: 13.5vw;
-  font-weight: 600;
+  font-weight: 700;
   color: ${Colors.gray};
   display: flex;
   justify-content: center;
-  word-wrap:nowrap;
+  word-wrap: nowrap;
 
   @media screen and (min-width: 1920px) {
     font-size: ${vwToPixels(13.5)}px;
@@ -534,11 +534,10 @@ export const SectionSocial = styled(Section)`
   @media screen and (max-width: 425px) {
     height: 85vw;
   }
-  
 `;
 export const SocialHeader = styled.div`
   font-size: 10.4vw;
-  font-weight: 600;
+  font-weight: 700;
   color: ${Colors.gray};
   display: flex;
   justify-content: center;

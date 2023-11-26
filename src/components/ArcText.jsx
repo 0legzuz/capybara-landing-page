@@ -10,7 +10,7 @@ const radius = 7.3;
 
 const LetterOnCurve = styled.div`
   font-size: 6.25vw;
-  font-weight: 600;
+  font-weight: 700;
   margin-left: 1.04vw;
   color: #313131;
   position: absolute;

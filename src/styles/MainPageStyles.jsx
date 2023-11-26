@@ -498,10 +498,10 @@ export const WhereText = styled.div`
   }
   @media screen and (max-width: 425px) {
     font-size: 4vw;
-    margin-left: 15vw;
-    margin-top: 18.3vw;
-    border-radius: 17vw 0 0 17vw;
-    padding: 4vw 4vw 4vw 8vw;
+    margin-left: 9vw;
+    margin-top: 20vw;
+    border-radius: 14vw 0 0 14vw;
+    padding: 2vw 3vw 2vw 6vw;
     width: 100vw;
     border-width: 0.6vw;
   }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { vwToPixels } from '../styles/AllComponentsStyles';
 
 const cardImages = ['/img/card1.png', '/img/card2.jpg', '/img/card3.jpeg'];
 
@@ -19,8 +20,7 @@ const initialCards = cardImages.concat(cardImages).map((image, index) => ({
   matched: false
 }));
 
-// Функция для перетасовки карт
-export function shuffleCards(cards) {
+function shuffleCards(cards) {
   for (let i = cards.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [cards[i], cards[j]] = [cards[j], cards[i]];
@@ -35,9 +35,6 @@ const GameSection = styled.section`
   background-color: ${Colors.darkBackground};
 `;
 
-function vwToPixels(vw) {
-  return Math.round(19.2 * vw);
-}
 const GameHeader = styled.section`
   font-size: 7vw;
   font-weight: 700;
@@ -201,6 +198,64 @@ const Game = () => {
     }, 2000);
   };
 
+  const [timer, setTimer] = useState(null);
+  const [rotation, setRotation] = useState(0);
+  const [isKeyPressed, setIsKeyPressed] = useState(false);
+
+  const handleImageMouseDown = () => {
+    const timerId = setTimeout(() => {
+      setRotation(rotation + 360);
+    }, 500); // Set a timeout for 500 milliseconds to determine a long press
+
+    setTimer(timerId);
+  };
+
+  const handleImageMouseUp = () => {
+    clearTimeout(timer);
+    setIsKeyPressed(false);
+  };
+
+  const handleImageMouseLeave = () => {
+    clearTimeout(timer);
+    setIsKeyPressed(false);
+  };
+
+  const handleKeyPress = () => {
+    setIsKeyPressed(true);
+  };
+
+  const handleKeyUp = () => {
+    setIsKeyPressed(false);
+  };
+
+  useEffect(() => {
+    const rotateImage = () => {
+      if (isKeyPressed) {
+        setRotation((prevRotation) => prevRotation + 5);
+      }
+    };
+
+    const intervalId = setInterval(rotateImage, 50);
+
+    return () => clearInterval(intervalId);
+  }, [isKeyPressed]);
+
+  useEffect(() => {
+    window.addEventListener('keypress', handleKeyPress);
+    window.addEventListener('keyup', handleKeyUp);
+
+    return () => {
+      window.removeEventListener('keypress', handleKeyPress);
+      window.removeEventListener('keyup', handleKeyUp);
+    };
+  }, []);
+  const imageStyle = {
+    transform: `rotate(${rotation}deg)`,
+    transition: 'transform 0.5s ease-in-out', // Добавляем плавный переход для эффекта вращения
+    cursor: 'pointer',
+    width: '65.7vw'
+  };
+
   return (
     <GameSection>
       <GameHeader>Найди капибару!</GameHeader>
@@ -217,6 +272,15 @@ const Game = () => {
       <Button disabled={!buttonActive} onClick={handleButtonClick}>
         <ButtonText>{buttonText}</ButtonText>
       </Button>
+      <GameHeader>Крути капибару!</GameHeader>
+      <img
+        src="/img/7.png"
+        alt="Rotating Image"
+        style={imageStyle}
+        onMouseDown={handleImageMouseDown}
+        onMouseUp={handleImageMouseUp}
+        onMouseLeave={handleImageMouseLeave}
+      />
     </GameSection>
   );
 };

@@ -122,14 +122,13 @@ const Game = () => {
   useEffect(() => {
     shuffleCards(initialCards);
 
-    //Выбрано 2 карты
+    // Выбрано 2 карты
     if (flippedCount === 2) {
       const [firstCard, secondCard] = cards.filter(
         (card) => card.flipped && !card.matched
       );
-      //Если карты одинаковые
+      // Если карты одинаковые
       if (firstCard.image === secondCard.image) {
-        //
         setCards((prevCards) =>
           prevCards.map((card) =>
             card.image === firstCard.image ? { ...card, matched: true } : card
@@ -163,7 +162,7 @@ const Game = () => {
     }
   }, [cards]);
 
-  //Карта
+  // Карта
   const handleCardClick = (cardId) => {
     if (isDisabled || isGameFinished) return;
 
@@ -200,37 +199,37 @@ const Game = () => {
 
   const [timer, setTimer] = useState(null);
   const [rotation, setRotation] = useState(0);
-  const [isKeyPressed, setIsKeyPressed] = useState(false);
+  const [isTouching, setIsTouching] = useState(false);
+
+  const handleImageTouchStart = () => {
+    setIsTouching(true);
+  };
+
+  const handleImageTouchEnd = () => {
+    setIsTouching(false);
+  };
 
   const handleImageMouseDown = () => {
     const timerId = setTimeout(() => {
       setRotation(rotation + 360);
-    }, 500); // Set a timeout for 500 milliseconds to determine a long press
+    }, 500);
 
     setTimer(timerId);
   };
 
   const handleImageMouseUp = () => {
     clearTimeout(timer);
-    setIsKeyPressed(false);
+    setIsTouching(false);
   };
 
   const handleImageMouseLeave = () => {
     clearTimeout(timer);
-    setIsKeyPressed(false);
-  };
-
-  const handleKeyPress = () => {
-    setIsKeyPressed(true);
-  };
-
-  const handleKeyUp = () => {
-    setIsKeyPressed(false);
+    setIsTouching(false);
   };
 
   useEffect(() => {
     const rotateImage = () => {
-      if (isKeyPressed) {
+      if (isTouching) {
         setRotation((prevRotation) => prevRotation + 5);
       }
     };
@@ -238,20 +237,11 @@ const Game = () => {
     const intervalId = setInterval(rotateImage, 50);
 
     return () => clearInterval(intervalId);
-  }, [isKeyPressed]);
+  }, [isTouching]);
 
-  useEffect(() => {
-    window.addEventListener('keypress', handleKeyPress);
-    window.addEventListener('keyup', handleKeyUp);
-
-    return () => {
-      window.removeEventListener('keypress', handleKeyPress);
-      window.removeEventListener('keyup', handleKeyUp);
-    };
-  }, []);
   const imageStyle = {
     transform: `rotate(${rotation}deg)`,
-    transition: 'transform 0.5s ease-in-out', // Добавляем плавный переход для эффекта вращения
+    transition: 'transform 0.5s ease-in-out',
     cursor: 'pointer',
     width: '65.7vw'
   };
@@ -277,6 +267,8 @@ const Game = () => {
         src="/img/7.png"
         alt="Rotating Image"
         style={imageStyle}
+        onTouchStart={handleImageTouchStart}
+        onTouchEnd={handleImageTouchEnd}
         onMouseDown={handleImageMouseDown}
         onMouseUp={handleImageMouseUp}
         onMouseLeave={handleImageMouseLeave}
